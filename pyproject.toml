@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdshift"
+version = "0.1.0"
+description = "How far does a PlantVillage-trained classifier fall on PlantDoc field images, and what recovers it?"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.1", "torchvision>=0.16", "numpy", "pandas", "scikit-learn", "scipy",
+  "pyyaml", "pillow", "imagehash", "matplotlib",
+]
+
+[project.optional-dependencies]
+tracking = ["mlflow"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

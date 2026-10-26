@@ -1,0 +1,4 @@
+# E4 - How many labelled field images per class recover the gap? Run with --fewshot-k 5 / 10 / 20.
+experiment_name: e4_fewshot
+model: {name: resnet18, pretrained: true}
+train: {augmentation: strong, fewshot_k: 10}

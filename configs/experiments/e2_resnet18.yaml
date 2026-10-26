@@ -1,0 +1,4 @@
+# E2 - Does ImageNet pre-training transfer better to field images?
+experiment_name: e2_resnet18
+model: {name: resnet18, pretrained: true}
+train: {augmentation: basic}

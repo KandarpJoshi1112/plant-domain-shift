@@ -1,0 +1,38 @@
+# Base configuration. Experiment files in configs/experiments/ override these keys.
+experiment_name: base
+
+paths:
+  plantvillage_dir: data/raw/plantvillage/color   # one sub-folder per PlantVillage class
+  plantdoc_train_dir: data/raw/plantdoc/train     # one sub-folder per PlantDoc class
+  plantdoc_test_dir: data/raw/plantdoc/test
+  class_map: configs/class_map.yaml
+  duplicate_groups: results/plantvillage_duplicate_groups.csv  # written by scripts/find_duplicates.py
+  output_dir: results
+
+data:
+  image_size: 224
+  val_fraction: 0.15
+  test_fraction: 0.15
+  batch_size: 64
+  num_workers: 4
+
+model:
+  name: resnet18          # custom_cnn | resnet18
+  pretrained: true        # ImageNet weights (resnet18 only)
+
+train:
+  epochs: 15
+  lr: 0.0003
+  weight_decay: 0.0001
+  label_smoothing: 0.0
+  augmentation: basic     # basic | strong
+  early_stopping_patience: 4
+  fewshot_k: 0            # >0 adds k PlantDoc *train* images per class to training
+
+evaluation:
+  ece_bins: 15
+  bootstrap_samples: 2000
+
+mlflow:
+  enabled: false
+  experiment: plant-domain-shift

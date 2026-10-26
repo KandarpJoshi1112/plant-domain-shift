@@ -1,0 +1,11 @@
+data/raw/*
+!data/raw/.gitkeep
+*.pt
+*.npz
+results/**/split_*.csv
+results/plantvillage_duplicate_groups.csv
+__pycache__/
+*.egg-info/
+.venv/
+mlruns/
+.pytest_cache/

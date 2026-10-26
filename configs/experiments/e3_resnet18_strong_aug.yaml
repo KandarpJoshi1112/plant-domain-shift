@@ -1,0 +1,4 @@
+# E3 - Does aggressive augmentation (crop, colour, blur, background clutter proxy) close the gap?
+experiment_name: e3_resnet18_strong_aug
+model: {name: resnet18, pretrained: true}
+train: {augmentation: strong}

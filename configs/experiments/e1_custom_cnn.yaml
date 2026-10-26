@@ -1,0 +1,4 @@
+# E1 - Baseline: your original CNN (replace CustomCNN in src/pdshift/models.py with your architecture).
+experiment_name: e1_custom_cnn
+model: {name: custom_cnn, pretrained: false}
+train: {augmentation: basic, epochs: 25, lr: 0.001}
